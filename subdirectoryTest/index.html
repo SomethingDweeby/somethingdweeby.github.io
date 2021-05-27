@@ -5,5 +5,14 @@
   </head>
   <body>
     <p>TESTING TESTING ONE TWO THREE.</p>
+    <input type="text" id="txt"/>
+    <input type="button" id="btn" value="submit"/>
+    <script>
+      var targetUrl = document.getElementById("txt");
+      function redirect(){
+        window.location.href = targetUrl.value;
+      };
+      document.getElementById("btn").addEventListener('click', redirect);
+    </script>
   </body>
 </html>
