@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | StreamOverlay</title>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      UnityLoader.instantiate("unityContainer", "Build/Build.json");
-    </script>
+    <title>Subpage test!</title>
   </head>
   <body>
-    <div id="unityContainer" style="width: 800px; height: 200px; margin: auto"></div>
+    <p>Enter a URL to go there. For integrated browsers without a url bar.</p>
+    <input type="text" id="txt"/>
+    <input type="button" id="btn" value="submit"/>
+    <script>
+      var targetUrl = document.getElementById("txt");
+      function redirect(){
+        window.location.href = targetUrl.value;
+      };
+      document.getElementById("btn").addEventListener('click', redirect);
+    </script>
   </body>
 </html>
