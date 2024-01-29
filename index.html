@@ -2,14 +2,24 @@
 <html>
   <head>
     <title>Balls!</title>
+    <style>
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+      }
+    </style>
   </head>
   <body>
-    <input type="button" id="sptfyButton" value="SpotifyNowPlaying"/>
-    <script>
-      function sptfyRedirect(){
-        window.location.href = "SpotifyNowPlaying";
-      };
-      document.getElementById("sptfyButton").addEventListener('click', sptfyRedirect);
-    </script>
+    <div class="center">
+      <input type="button" id="sptfyButton" value="SpotifyNowPlaying"/>
+      <script>
+        function sptfyRedirect(){
+          window.location.href = "SpotifyNowPlaying";
+        };
+        document.getElementById("sptfyButton").addEventListener('click', sptfyRedirect);
+      </script>
+    </div>
   </body>
 </html>
