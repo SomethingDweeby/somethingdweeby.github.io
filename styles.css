@@ -6,7 +6,7 @@
 }
 
 .button {
-    background-color: #1DB954;
+    background-color: #1db954;
     border: none;
     color: #191414;
     text-align: center;
@@ -16,7 +16,12 @@
     width: 230px;
     font-size: 20px;
     margin: 4px 2px;
+    cursor:crosshair;
     font-family: 'Varela Round', sans-serif;
+}
+
+.button:hover {
+    background-color: #6de296;
 }
 
 .spotifyButton {border-radius: 25px;}
