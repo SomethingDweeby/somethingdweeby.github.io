@@ -1,3 +1,9 @@
 name: Abe Enoch
 markdown: kramdown
-baseurl: 
+baseurl:
+defaults:
+  - scope:
+      path: "assets/portfolio"
+    values:
+      image: true
+      video: true

@@ -3,6 +3,15 @@ layout: default
 title: Portfolio
 ---
 
-<div>
-    <h1>This is where my portfolio will go >:)</h1>
+<div class="imagecontainer">
+{% for image in site.static_files %}
+    {% if image.path contains 'portfolio/' %}
+        {% assign imagepath = image.path | split: "/" %}
+        <img src="{{ site.baseurl }}{{ image.path }}" class="
+          {% for subpath in imagepath %}
+            {% if forloop.index0 == 3 %}{{ subpath }}{% endif %}
+          {% endfor %}
+        " />
+    {% endif %}
+{% endfor %}
 </div>
