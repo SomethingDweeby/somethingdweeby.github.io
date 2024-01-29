@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>{{ page.title }}</title>
+			<link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | absolute_url }}">
+		</head>
+		<body>
+			<nav>
+	    		<ul id="menu">
+                    <img class="icon" src="/res/Watermark.png" draggable="false">
+	        		<li><a href="{{ "index.html" | absolute_url }}">Home</a></li>
+		        	<li><a href="{{ "/topics/test.html" | absolute_url }}">Page 1</a></li>
+	    		</ul>
+			</nav>
+			<div class="container">
+			
+			{{ content }}
+			
+			</div><!-- /.container -->
+			<footer>
+	    		<p>
+				{% assign url = "https://github.com/AninditaBasu" %}
+				<a href="{{ site.baseurl | prepend: url }}">Get the code</a>
+				</p>
+			</footer>
+		</body>
+	</html>

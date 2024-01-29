@@ -1,38 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Balls!</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <div class="topBar">
-      <img class="icon" src="/res/Watermark.png" draggable="false">
-    </div>
-    <div class="spotifyNP">
-      <button class="button spotifyButton" id="sptfyButton">
-        SpotifyNowPlaying
-      </button>
-      <script>
-        function sptfyRedirect(){
-          window.location.href = "SpotifyNowPlaying";
-        };
-        document.getElementById("sptfyButton").addEventListener('click', sptfyRedirect);
-      </script>
-    </div>
-
-    <div id="cats"></div>
-    <div class="imagecontainer">
-    {% for image in site.static_files %}
-        {% if image.path contains 'gallery/' %}
-            {% assign imagepath = image.path | split: "/" %}
-            <img src="{{ site.baseurl }}{{ image.path }}" class="
-              {% for subpath in imagepath %}
-                {% if forloop.index0 == 3 %}{{ subpath }}{% endif %}
-              {% endfor %}
-            " />
-        {% endif %}
-    {% endfor %}
-    </div>
-    
-  </body>
-</html>
+---
+layout: default
+title: anin
+---
+<h1>It works!</h1>
+<p><i>site.url</i> = {{ site.url }}</p>
+<p><i>site.baseurl</i> = {{ site.baseurl }}</p>
