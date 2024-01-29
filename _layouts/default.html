@@ -8,8 +8,8 @@
 			<nav>
 	    		<ul id="menu">
                     <img class="icon" src="/res/Watermark.png" draggable="false">
-	        		<li><a href="{{ "index.html" | absolute_url }}">Home</a></li>
-		        	<li><a href="{{ "/topics/test.html" | absolute_url }}">Page 1</a></li>
+	        		<li><a href="{{ absolute_url }}">Home</a></li>
+		        	<li><a href="/SpotifyNowPlaying/index.html">SpotifyNowPlaying</a></li>
 	    		</ul>
 			</nav>
 			<div class="container">
@@ -19,8 +19,7 @@
 			</div><!-- /.container -->
 			<footer>
 	    		<p>
-				{% assign url = "https://github.com/AninditaBasu" %}
-				<a href="{{ site.baseurl | prepend: url }}">Get the code</a>
+				This is at the bottom of the page.
 				</p>
 			</footer>
 		</body>
