@@ -22,52 +22,52 @@
     <div id="img-container"></div>
     <script>
       const imgEl = document.createElement('img');
-const imgContainer = document.getElementById('img-container');
-
-// create a new request object
-const xhr = new XMLHttpRequest();
-// set the method to get and the url to
-// the folder containing your images
-// the third property is whether to make the
-// request asynchronously so it's non-blocking
-xhr.open('GET', './images', true);
-// this response type document means that
-// we're going to get back a document describing
-// the contents of the folder which will
-// allow us to query that document to get all of
-// the image urls.
-xhr.responseType = 'document';
-// the onload event is where we'll add the callback
-// to dictate what happens when the request is
-// fulfilled
-xhr.onload = () => {
-  // check if the response was OK
-  if (xhr.status === 200) {
-    // query the document we get back to find all
-    // the anchor tags
-    const elements = xhr.response.getElementsByTagName('a');
-    // loop over the anchor tags
-    for (element of elements) {
-      // the tags will include anchor tags for the directory,
-      // subdirectories and files, so we only want the ones
-      // that are images.
-      if (element.href.match(/\.(jpe?g|png|gif)$/)) {
-        // create an img tag
-        const img = imgEl.cloneNode();
-        // set its src to the href of the anchor tag
-        img.src = element.href;
-        // append it to the image container element
-        imgContainer.appendChild(img);
-      }
-    }
-  } else {
-    // if the request fails, we'll log the error in the console
-    // for debugging purposes
-    console.error('Request failed. Returned status of ' + xhr.status);
-  }
-};
-// send the request!
-xhr.send();
+      const imgContainer = document.getElementById('img-container');
+          
+      // create a new request object
+      const xhr = new XMLHttpRequest();
+      // set the method to get and the url to
+      // the folder containing your images
+      // the third property is whether to make the
+      // request asynchronously so it's non-blocking
+      xhr.open('GET', '/images', true);
+      // this response type document means that
+      // we're going to get back a document describing
+      // the contents of the folder which will
+      // allow us to query that document to get all of
+      // the image urls.
+      xhr.responseType = 'document';
+      // the onload event is where we'll add the callback
+      // to dictate what happens when the request is
+      // fulfilled
+      xhr.onload = () => {
+        // check if the response was OK
+        if (xhr.status === 200) {
+          // query the document we get back to find all
+          // the anchor tags
+          const elements = xhr.response.getElementsByTagName('a');
+          // loop over the anchor tags
+          for (element of elements) {
+            // the tags will include anchor tags for the directory,
+            // subdirectories and files, so we only want the ones
+            // that are images.
+            if (element.href.match(/\.(jpe?g|png|gif)$/)) {
+              // create an img tag
+              const img = imgEl.cloneNode();
+              // set its src to the href of the anchor tag
+              img.src = element.href;
+              // append it to the image container element
+              imgContainer.appendChild(img);
+            }
+          }
+        } else {
+          // if the request fails, we'll log the error in the console
+          // for debugging purposes
+          console.error('Request failed. Returned status of ' + xhr.status);
+        }
+      };
+      // send the request!
+      xhr.send();
     </script>
   </body>
 </html>
