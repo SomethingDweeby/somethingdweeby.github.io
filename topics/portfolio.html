@@ -8,7 +8,7 @@ title: Portfolio
     {% for image in site.static_files %}
         {% if image.path contains 'portfolio/' %}
             {% assign imagepath = image.path | split: "/" %}
-            <div class="col col-lg "></div><img src="{{ site.baseurl }}{{ image.path }}"></div>
+            <div class="col col-lg "><img src="{{ site.baseurl }}{{ image.path }}"></div>
         {% endif %}
     {% endfor %}
     </div>
