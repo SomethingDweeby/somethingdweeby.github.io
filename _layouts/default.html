@@ -2,15 +2,16 @@
 	<html>
 		<head>
 			<title>{{ page.title }}</title>
-			<link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | absolute_url }}">
+			<link rel="stylesheet" type="text/css" href= "/css/main.css" | absolute_url }}">
 		</head>
 		<body>
 			<nav>
+				<img class="icon" src="/res/Watermark.png" draggable="false">
 	    		<ul id="menu">
-                    <img class="icon" src="/res/Watermark.png" draggable="false">
 	        		<li><a href="{{ absolute_url }}">Home</a></li>
 		        	<li><a href="/SpotifyNowPlaying/index.html">SpotifyNowPlaying</a></li>
-	    		</ul>
+					<li><a href="{{ "/topics/portfolio.html" | absolute_url }}">Portfolio</a></li>
+				</ul>
 			</nav>
 			<div class="container">
 			
@@ -19,7 +20,7 @@
 			</div><!-- /.container -->
 			<footer>
 	    		<p>
-				This is at the bottom of the page.
+				This is the bottom of the page.
 				</p>
 			</footer>
 		</body>
