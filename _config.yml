@@ -7,3 +7,5 @@ defaults:
     values:
       image: true
       video: true
+twitter:
+  username: SometSketch
