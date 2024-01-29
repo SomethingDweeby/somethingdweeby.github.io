@@ -4,19 +4,11 @@
     <title>Subpage test!</title>
   </head>
   <body>
-    <p>Enter a URL to go there. For integrated browsers without a url bar.</p>
-    <input type="text" id="txt"/>
-    <input type="button" id="redirectBtn" value="submit"/>
     <input type="button" id="sptfyButton" value="SpotifyNowPlaying"/>
     <script>
-      var targetUrl = document.getElementById("txt");
-      function redirect(){
-        window.location.href = targetUrl.value;
-      };
       function sptfyRedirect(){
         window.location.href = "SpotifyNowPlaying";
       };
-      document.getElementById("redirectBtn").addEventListener('click', redirect);
       document.getElementById("sptfyButton").addEventListener('click', sptfyRedirect);
     </script>
   </body>
