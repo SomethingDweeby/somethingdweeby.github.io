@@ -1,11 +1,13 @@
 body {
     margin: 60px auto;
-    width: 70%;
+    width: 80%;
 }
+
 nav {
     border-bottom: 1px solid #cc6600;
     text-align: center;
 }
+
 nav ul {
     font-family: 'Varela Round', sans-serif;
     padding: 0px;
@@ -16,17 +18,21 @@ nav ul li {
     display: inline;
     margin-right: 40px;
 }
+
 ul#menu li {
   display:inline;
   margin-right: 40px;
 }
+
 a {
     text-decoration: none;
     color: grey;
 }
+
 a:hover {
     text-decoration: underline;
 }
+
 h1 {
     font-size: 3em;
     font-family: 'Varela Round', sans-serif;
@@ -48,4 +54,41 @@ footer {
 
 .icon{
     height: 50px;
+}
+
+.maincontent{
+	padding-top: 0%;
+	padding-left:0%;
+}
+
+	
+.col {
+	/**float:left; dont need this**/
+	padding: 1%;
+}
+.col-lg{
+	/**float:left; dont need this**/
+    height: 200px;
+    overflow: hidden;
+    margin: 10px 0;
+    position: relative;
+    flex-basis: 30%;
+}
+
+  /* Images crop and center to col-lg box up to 1000% centering (if 100% if it's 3x the size it doesn't fully center)Idk man why? projectors and stuff? */
+.col-lg img{
+	display:block;
+    position: absolute;
+    left: -1000%;
+    right: -1000%;
+    top: -1000%;
+    bottom: -1000%;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+}
+.imgrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
