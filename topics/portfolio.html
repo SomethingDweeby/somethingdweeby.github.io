@@ -7,11 +7,7 @@ title: Portfolio
 {% for image in site.static_files %}
     {% if image.path contains 'portfolio/' %}
         {% assign imagepath = image.path | split: "/" %}
-        <img src="{{ site.baseurl }}{{ image.path }}" class="
-          {% for subpath in imagepath %}
-            {% if forloop.index0 == 3 %}{{ subpath }}{% endif %}
-          {% endfor %}
-        " />
+        <img src="{{ site.baseurl }}{{ image.path }}">
     {% endif %}
 {% endfor %}
 </div>
