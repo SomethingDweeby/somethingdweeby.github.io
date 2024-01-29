@@ -4,13 +4,11 @@ title: Somet's Portfolio
 image: /assets/portfolio/MixedRenderingTest.gif
 ---
 
-<div class="maincontent">
-    <div class="imgrid">
-    {% for image in site.static_files %}
-        {% if image.path contains 'portfolio/' %}
-            {% assign imagepath = image.path | split: "/" %}
-            <div class="col col-lg "><img src="{{ site.baseurl }}{{ image.path }}"></div>
-        {% endif %}
-    {% endfor %}
-    </div>
+<div class="gallery">
+{% for image in site.static_files %}
+    {% if image.path contains 'portfolio/' %}
+        {% assign imagepath = image.path | split: "/" %}
+        <div class="col"><img src="{{ site.baseurl }}{{ image.path }}"></div>
+    {% endif %}
+{% endfor %}
 </div>
