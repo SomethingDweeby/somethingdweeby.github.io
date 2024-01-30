@@ -56,26 +56,76 @@ footer {
     height: 50px;
 }
 
-.gallery{
+.grid-container{
+    border: solid 1px #000000;
     display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 5px;
-    grid-gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.col{
-    overflow: hidden;
-    text-align: center;
-}
-
-.gallery img{
+.griditem{
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
     aspect-ratio: 1;
+    transition-duration: .3s;
+}
+
+.griditem:hover{
+    cursor:pointer;
+    filter: brightness(70%);
+}
+
+.modal{
+    z-index: 3;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* below covers window area*/
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform .3s;
+    overflow: auto;
+    background-color: #fff; /* set window back ground color */
 }
 
-.gallery img:hover {
-    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+.modal-content{
+    display: block;
+}
+
+.modal-btn{
+    color: red;
+    padding: 4px 8px;
+    position: absolute;
+    right: 10vw;
+    top: 1vh;
+}
+
+.modal-btn:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+  }
+.animate-zoom {
+  animation: animatezoom 0.8s;
+}
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.topright {
+  position: relative;
+  right: 0;
+  top: 0;
+}
+.mod-img {
+  /* responsive display full image within in view area */
+  object-fit: scale-down;
+  display: block;
+  max-height: 99vh;
+  max-width: 99vw;
+  margin: 0.5vh auto;
 }

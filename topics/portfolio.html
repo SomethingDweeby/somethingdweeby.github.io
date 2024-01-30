@@ -4,11 +4,40 @@ title: Somet's Portfolio
 image: /assets/portfolio/MixedRenderingTest.gif
 ---
 
-<div class="gallery">
+<div id="grid" class="grid-container">
 {% for image in site.static_files %}
     {% if image.path contains 'portfolio/' %}
         {% assign imagepath = image.path | split: "/" %}
-        <div class="col"><img src="{{ site.baseurl }}{{ image.path }}"></div>
+        <div id="{ image.basename }" class="griditem { image.basename }" style="background-image: url({{ site.baseurl }}{{ image.path }});"></div>
     {% endif %}
 {% endfor %}
 </div>
+
+<div id="modal01" class="modal">
+    <img id="img01" class="mod-img animate-zoom">
+        <div id="btn1" class="modal-btn ">Close</div>
+        <!--  <div class="modal-content  " >  
+        </div>-->
+</div>
+
+<script>
+    document.getElementById("grid").addEventListener("click", onImage);
+    
+    function onImage(event) {
+        var x = event.target;
+        const image = getComputedStyle(x);
+        x.src = image.backgroundImage.slice(5, -2);
+        if (x.src == "") {
+            return;
+        } else {
+            var modal = document.getElementById("modal01");
+            modal.style.display = "block"; //new overlay div
+            var img01 = document.getElementById("img01");
+            img01.src = x.src;
+            document.getElementById("btn1").addEventListener("click", function () {
+                modal01.style.display = "none";
+            });
+            console.log(x.src, img01.clientWidth, img01.clientHeight);
+        }
+    }
+</script>
